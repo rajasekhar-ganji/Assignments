@@ -1,0 +1,14 @@
+
+{
+    "WebTableData":
+    {
+        "FirstName": "raja",
+        "LastName" :"sekhar",
+        "Email": "raja@gmail.com",
+        "Age":"29",
+        "Salary":"30000",
+        "department":"it",
+        "searchDummyName":"alden",
+        "modifyname":"sekhar"
+    }
+    }
