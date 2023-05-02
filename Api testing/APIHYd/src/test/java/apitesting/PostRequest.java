@@ -16,7 +16,9 @@ public class PostRequest {
 		data.put("employee_age", 25);
 		data.put("profile_image", "");
 		Response resp=RestAssured.given().baseUri("https://dummy.restapiexample.com/api/v1").contentType("application/json").body(data.toString()).when().post("/create").then().log().all().extract().response();
-		
+		System.out.println(resp.getBody().asString());
+		System.out.println(resp.getStatusCode());
+		    
 	}
 
 }

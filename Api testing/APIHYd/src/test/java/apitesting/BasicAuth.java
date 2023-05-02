@@ -11,8 +11,10 @@ public class BasicAuth {
 
 	public static void main(String[] args) {
 
-		RestAssured.given().baseUri("https://api.instantwebtools.net/v1").auth().basic("qwertyuiop", "y76yg7676t").when().get("/passenger/644635317b3fd8c6a6b716f4").then().statusCode(200).log().all();
-		
+		Response response=RestAssured.given().baseUri("https://api.instantwebtools.net/v1").auth().basic("qwertyuiop", "y76yg7676t").when().get("/passenger/644635317b3fd8c6a6b716f4").then().statusCode(200).log().all().extract().response();
+		System.out.println(response.getBody().asString());
+		System.out.println(response.getStatusCode());
+		    
 	}
 
 }

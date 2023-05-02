@@ -12,8 +12,10 @@ public class PutRequest {
 				data.put("first-name", "raj");
 				data.put("last-name", "sekhar");
 				System.out.println(data.toJSONString());
-				RestAssured.given().baseUri("https://reqres.in/api").header("Content-Type","application/json").contentType(ContentType.JSON).accept(ContentType.JSON).body(data.toJSONString()).when().put("/users/2").then().statusCode(200).log().all();
-
+			Response response=	RestAssured.given().baseUri("https://reqres.in/api").header("Content-Type","application/json").contentType(ContentType.JSON).accept(ContentType.JSON).body(data.toJSONString()).when().put("/users/2").then().statusCode(200).log().all().extract().response();
+				System.out.println(response.getBody().asString());
+				System.out.println(response.getStatusCode());
+				    
 	}
 
 }
