@@ -3,6 +3,7 @@ import org.json.simple.JSONObject;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 
 public class PatchRequest {
 
@@ -15,7 +16,7 @@ public class PatchRequest {
 		System.out.println(request.toJSONString());
 		
 		
-		RestAssured.given().
+		Response response=RestAssured.given().
 			header("Content-Type", "application/json").baseUri("https://reqres.in").
 			contentType(ContentType.JSON).
 			accept(ContentType.JSON).
@@ -24,7 +25,10 @@ public class PatchRequest {
 			patch("/api/users/3").
 		then().
 			statusCode(200)
-			.log().all();
+			.log().all().extract().response();
+		System.out.println(response.getBody().asString());
+		System.out.println(response.getStatusCode());
+		    
 
 	}
 
