@@ -53,8 +53,9 @@ public class Parentclass {
 	 
 	  @BeforeMethod
 	  public void beforeMethod() {
-		  System.out.println("Before method successfully executed");
-		 
+		  JsonPath js=response.jsonPath();
+		  System.out.println("The data added succefully ==>"+js.get("message"));
+		  System.out.println("the employee name is==>"+js.get("data.employee_name")); 
 	  }
 	 
 	  @AfterMethod
@@ -77,7 +78,7 @@ public class Parentclass {
 
 	  @AfterSuite
 	  public void afterSuite() {
-		  System.out.println("The test is successfull");
+		  System.out.println("The test is successfull and response body ===>"+response.getBody().asString());
 		 
 	  }
 
