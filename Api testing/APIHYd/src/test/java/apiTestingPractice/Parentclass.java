@@ -59,19 +59,19 @@ public class Parentclass {
 	 
 	  @AfterMethod
 	  public void afterMethod() {
-		  System.out.print(response.getStatusCode());
-		  Assert.assertEquals(response.getStatusCode(), 200,"Response code matches and test success");
+		  System.out.println(response.getStatusCode());
+		  Assert.assertEquals(response.getStatusCode(), 200);
 	  }
 
 	  @AfterClass
 	  public void afterClass() {
-		  System.out.print(response.getStatusLine());
-		Assert.assertEquals(response.getStatusLine(),"","Response code matches and test success");
+		  System.out.println(response.getStatusLine());
+		Assert.assertEquals(response.getStatusLine(),"HTTP/1.1 200 OK");
 		 
 	  }
 	  @AfterTest
 	  public void afterTest() {
-		 System.out.print(response.getTime());
+		 System.out.println("Response time is ===>"+response.getTime());
 		 
 	  }
 
