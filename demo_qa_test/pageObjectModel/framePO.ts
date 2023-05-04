@@ -1,6 +1,6 @@
 import { Browser, expect, Locator, Page } from '@playwright/test';
 export class FramePO {
-  readonly page: Page;
+readonly page: Page;
 readonly alertframewindowbutton:string;
 readonly framesbutton:string;
 readonly frame1:string;
