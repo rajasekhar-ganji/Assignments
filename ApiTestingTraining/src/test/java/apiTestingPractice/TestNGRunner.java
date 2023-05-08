@@ -11,7 +11,7 @@ public class TestNGRunner {
 	  
 	  TestNG runner=new TestNG();
 	  ArrayList<String> list=new ArrayList<String>();
-	  list.add("C:\\Users\\rajasekhar.ganji\\eclipse-workspace\\APIHYd\\testng.xml");
+	  list.add(Constant.xmlfile_path);
 	  runner.setTestSuites(list);
 	  runner.run();
   }
