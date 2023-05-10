@@ -1,14 +1,16 @@
 package apiTestingPractice;
 
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 public class ParallelTest {
 	
-	@Test()
+	@BeforeSuite
 	public void Connect_PropertiesFile() {
 		Utils.ConnectPropertyFile();
 	}
 	
-	@Test(dependsOnMethods="Connect_PropertiesFile")
+	@Test()
 	public void Read_JsonFile() {
 		Utils.GetDataFromJSONFile();
 	}
@@ -16,7 +18,7 @@ public class ParallelTest {
 	public void APIRequest_getResponse() {
 		Utils.GetResponseFor_APIRequest();
 	}
-	@Test(dependsOnMethods="APIRequest_getResponse")
+	@AfterTest()
 	public void VerifyAllValidations() {
 		Utils.VerifyValidations();
 	}

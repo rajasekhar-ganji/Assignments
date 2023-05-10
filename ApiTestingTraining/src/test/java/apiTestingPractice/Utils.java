@@ -12,17 +12,17 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.Assert;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class Utils {
 	//static Logger log = Logger.getLogger(Utils.class);
-	public static final Logger log = LogManager.getLogger(Utils.class);
+	public static Logger log = Logger.getLogger(Utils.class);
 	public static Properties prop;
 	public static JSONObject passingdata;
 	public static Response response;
 //Connect_PropertiesFile Test
-	
 	public static void ConnectPropertyFile() {
 		prop = new Properties();
 		log.info("Start connect to property file");
@@ -114,14 +114,11 @@ public class Utils {
 					.all().extract().response();
 			log.info("the getbyid response recieved");
 		 }
-		 else if(method.equals("Delete"))
-		 {
-			 response = RestAssured.given().contentType(prop.getProperty("content")).body(passingdata.toString()).auth()
-						.basic(prop.getProperty("username"), prop.getProperty("password")).when().delete(Constant.delete).then().log()
-						.all().extract().response();
-			 
+			 else {
+				 System.out.println("NO TEST IS RUNNING NOW");
+			 }
 		 }
-		}
+		
 	
 	
 //VerifyAllValidations Test
