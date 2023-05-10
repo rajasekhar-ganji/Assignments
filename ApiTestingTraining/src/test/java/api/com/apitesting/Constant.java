@@ -13,8 +13,10 @@ public class Constant {
 	    public final static String delete="/employee/5";
 	    public final static String statusline="HTTP/1.1 200 OK";
 	    public final static int statuscode=200;
+	    public final static int salary=500000;
 	    public final static String method="Get";
 	    public final static String employeename="Brielle Williamson";
+	    public final static String employeehalfname="Williamson";
 	    public final static String url="https://dummy.restapiexample.com/api/v1/employees";
 	}
 

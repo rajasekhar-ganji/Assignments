@@ -55,7 +55,7 @@ public class Utils {
 		Assert.assertTrue(isMatch);
 		}
   }
-  public static void getJsonpathObjects()
+  public static void VerifyJsonpathObjects()
   {
 	  log.info("Create the json path");
 		jsonpath = response.jsonPath();

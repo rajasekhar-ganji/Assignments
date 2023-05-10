@@ -17,7 +17,7 @@ public class RegularExpressions{
 	@Test
 	public void HamcrestAndregularExpressions() {
 	Utils.InitialValidations();
-	Utils.getJsonpathObjects();
+	Utils.VerifyJsonpathObjects();
 	}
 	@AfterTest()
 	public void UsingHamcrestMatchers()
